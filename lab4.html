@@ -1,74 +1,95 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="mn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лаб 4: Вэб макет зохиох</title>
-    <!-- CSS fail holboh-->
-    <link rel="stylesheet" href="style.css">
+    <title>Лаб 4: Вэб макет (Сайжруулсан)</title>
+    <!-- Google Font оруулж ирэх (Илүү гоё үсгийн фонт) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style4.css">
 </head>
 <body>
 
-    <!-- Header -->
     <header>
-        <h1>Миний анхны вэбсайт</h1>
+        <div class="header-content">
+            <h1>IT202 Blog</h1>
+            <p>Вэб хөгжүүлэлтийн сүүлийн үеийн мэдээлэл</p>
+        </div>
     </header>
 
-    <!-- Navigation tses hseg-->
+    <!-- Flexbox ашигласан цэс -->
     <nav class="navbar">
         <ul>
             <li><a href="#">Нүүр хуудас</a></li>
-            <li><a href="#">Мэдээлэл</a></li>
+            <li><a href="#">Нийтлэлүүд</a></li>
+            <li><a href="#">Галерей</a></li>
             <li><a href="#">Бидний тухай</a></li>
-            <li><a href="#">Холбоо барих</a></li>
         </ul>
     </nav>
 
-    <!-- undsen heseg Sidebar baftaah yrunhii sav-->
     <div class="container">
-        
-        <!--kontent hesg -->
+        <!-- Үндсэн контент (Grid ашиглана) -->
         <main class="main-content">
-            <h2>Шинэ мэдээллүүд</h2>
+            <div class="section-title">
+                <h2>Онцлох нийтлэлүүд</h2>
+                <span class="line"></span>
+            </div>
             
             <div class="card-grid">
-                <!-- kart 1 -->
+                <!-- Карт 1 -->
                 <article class="card">
-                    <h3>Мэдээ 1</h3>
-                    <p>CSS Grid ашиглан хийсэн эхний мэдээллийн хэсэг. Энэ нь 3 баганатай гарна.</p>
+                    <div class="card-image bg-1"></div>
+                    <div class="card-content">
+                        <h3>Технологийн хөгжил</h3>
+                        <p>Хиймэл оюун ухаан болон ирээдүйн чиг хандлагын талаарх сонирхолтой мэдээлэл.</p>
+                        <a href="#" class="read-more">Цааш унших &rarr;</a>
+                    </div>
                 </article>
                 
-                <!-- kart 2 -->
+                <!-- Карт 2 -->
                 <article class="card">
-                    <h3>Мэдээ 2</h3>
-                    <p>Flexbox болон Grid-ийг хослуулж вэбийн макет гаргаж байна.</p>
+                    <div class="card-image bg-2"></div>
+                    <div class="card-content">
+                        <h3>Вэб дизайн</h3>
+                        <p>Орчин үеийн вэб сайтын өнгөний зохицол, UI/UX дизайны шийдлүүд.</p>
+                        <a href="#" class="read-more">Цааш унших &rarr;</a>
+                    </div>
                 </article>
                 
-                <!-- kart 3 -->
+                <!-- Карт 3 -->
                 <article class="card">
-                    <h3>Мэдээ 3</h3>
-                    <p>Гурав дахь картын мэдээлэл энд байрлана. Оюутны даалгавар.</p>
-                </article>
-
-                <!-- kart 4 -->
-                <article class="card">
-                    <h3>Мэдээ 4</h3>
-                    <p>Дөрөв дэх картын хэсэг. Grid ашигласан тул автоматаар доошоо шилжинэ.</p>
+                    <div class="card-image bg-3"></div>
+                    <div class="card-content">
+                        <h3>Програмчлал</h3>
+                        <p>CSS Grid болон Flexbox ашиглан хэрхэн гоёмсог макет гаргах талаар судалцгаая.</p>
+                        <a href="#" class="read-more">Цааш унших &rarr;</a>
+                    </div>
                 </article>
             </div>
         </main>
 
-        <!-- Sidebar hajuu tses-->
+        <!-- Sidebar -->
         <aside class="sidebar">
-            <h3>Туслах хэсэг</h3>
-            <p>Энд хажуу талын нэмэлт мэдээлэл, зарлал эсвэл линкүүд байрлана.</p>
+            <div class="widget">
+                <h3>Хайх</h3>
+                <div class="search-box">
+                    <input type="text" placeholder="Хайх утга...">
+                    <button>Ок</button>
+                </div>
+            </div>
+            <div class="widget">
+                <h3>Сүүлд нэмэгдсэн</h3>
+                <ul class="sidebar-links">
+                    <li><a href="#">HTML5-ийн шинэ таагууд</a></li>
+                    <li><a href="#">CSS animation хийх нь</a></li>
+                    <li><a href="#">Javascript анхан шат</a></li>
+                </ul>
+            </div>
         </aside>
-
     </div>
 
-    <!-- Footer hol hesg-->
     <footer>
-        <p>&copy; 2026 он. Вэб програмчлал Лаб 4.</p>
+        <p>&copy; 2026 он. Вэб програмчлал Лаб 4. Бүх эрх хуулиар хамгаалагдсан.</p>
     </footer>
 
 </body>
