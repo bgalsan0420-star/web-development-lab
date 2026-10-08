@@ -1,0 +1,129 @@
+/* 5-р шаардлага: Өнгө, тогтмол дизайны хэв маяг (CSS Variables) */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --bg-color: #e9ecef;
+    --text-color: #333;
+    --white: #ffffff;
+}
+
+body {
+    /* 5-р шаардлага: Google Fonts ашиглах */
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* 3-р шаардлага: Box model (padding, border-radius, margin) ашиглан "амьсгалуулах" */
+.form-wrapper {
+    background-color: var(--white);
+    padding: 40px; 
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 380px;
+    
+    /* 4-р шаардлага: Badge-д зориулсан relative position */
+    position: relative; 
+}
+
+/* 4-р шаардлага: position: absolute ашигласан жишээ (Badge) */
+.badge {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+/* 2-р шаардлага: Class сонгогч ашиглаж тус тусад нь загварчлах */
+.form-title {
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+    margin-top: 0;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* 3-р шаардлага: Талбарт Box model ашигласан нь */
+.input-field {
+    width: 100%;
+    padding: 12px 15px;      /* padding */
+    border: 1px solid #ccc;  /* border */
+    border-radius: 6px;      /* border-radius */
+    box-sizing: border-box; 
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.input-field:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* Товчны загварчлал ба Box model */
+.submit-btn {
+    width: 100%;
+    padding: 14px;           /* padding */
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;      /* border-radius */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;        /* margin */
+}
+
+.submit-btn:hover {
+    background-color: #2980b9;
+}
+
+/* 4-р шаардлага: Tooltip (Нэмэлт position жишээ) */
+.tooltip-container {
+    position: relative;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    background-color: var(--secondary-color);
+    color: #fff;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+    bottom: 110%; /* Талбарын дээр байрлах */
+    right: 0;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Хулгана очих үед Tooltip гарч ирэх */
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
