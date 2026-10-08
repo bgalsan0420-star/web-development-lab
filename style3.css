@@ -1,4 +1,4 @@
-/* 5-р шаардлага: Өнгө, тогтмол дизайны хэв маяг (CSS Variables) */
+/* ungu togtmol dis (CSS Variables) */
 :root {
     --primary-color: #3498db;
     --secondary-color: #2c3e50;
@@ -8,7 +8,7 @@
 }
 
 body {
-    /* 5-р шаардлага: Google Fonts ашиглах */
+    /* Google Fonts  */
     font-family: 'Roboto', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -19,7 +19,7 @@ body {
     margin: 0;
 }
 
-/* 3-р шаардлага: Box model (padding, border-radius, margin) ашиглан "амьсгалуулах" */
+/* Box model (padding, border-radius, margin)  */
 .form-wrapper {
     background-color: var(--white);
     padding: 40px; 
@@ -28,11 +28,11 @@ body {
     width: 100%;
     max-width: 380px;
     
-    /* 4-р шаардлага: Badge-д зориулсан relative position */
+    /*  Badge-д zoruilsan relative position */
     position: relative; 
 }
 
-/* 4-р шаардлага: position: absolute ашигласан жишээ (Badge) */
+/*  position: absolute ashiglsan jishee (Badge) */
 .badge {
     position: absolute;
     top: -12px;
@@ -46,7 +46,7 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.15);
 }
 
-/* 2-р шаардлага: Class сонгогч ашиглаж тус тусад нь загварчлах */
+/*  Class songogch ashiglan tus tusdan */
 .form-title {
     text-align: center;
     color: var(--secondary-color);
@@ -65,7 +65,7 @@ body {
     font-size: 14px;
 }
 
-/* 3-р шаардлага: Талбарт Box model ашигласан нь */
+/*  Box model  */
 .input-field {
     width: 100%;
     padding: 12px 15px;      /* padding */
@@ -82,7 +82,7 @@ body {
     outline: none;
 }
 
-/* Товчны загварчлал ба Box model */
+/* tovchnii zaavarchlal ba Box model */
 .submit-btn {
     width: 100%;
     padding: 14px;           /* padding */
@@ -101,7 +101,7 @@ body {
     background-color: #2980b9;
 }
 
-/* 4-р шаардлага: Tooltip (Нэмэлт position жишээ) */
+/* Tooltip (Нэмэлт position) */
 .tooltip-container {
     position: relative;
 }
@@ -122,7 +122,7 @@ body {
     transition: opacity 0.3s;
 }
 
-/* Хулгана очих үед Tooltip гарч ирэх */
+/*  Tooltip garch ireh */
 .tooltip-container:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
