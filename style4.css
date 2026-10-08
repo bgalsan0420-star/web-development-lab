@@ -1,4 +1,4 @@
-/* buh elementig zaig hemnej tsevrleh */
+/* yrunhii tohirgoo */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,95 +6,197 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f3f4f6;
+    color: #374151;
+    line-height: 1.6;
 }
 
-/* Header загвар */
+/* Header */
 header {
-    background-color: #2c3e50;
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 40px 20px;
 }
 
-/* Navigation (Flexbox ashiglah shaardlag 1) */
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+/* Navigation - Flexbox */
 .navbar {
-    background-color: #34495e;
-    padding: 15px;
+    background-color: #1f2937;
+    padding: 15px 0;
 }
 
 .navbar ul {
-    list-style-type: none;
-    display: flex;                /* Flexbox асаах */
-    justify-content: center;      /* Golluulah */
-    align-items: center;          /* Bosoo tenhlegt golluulah */
-    gap: 25px;                    /* Tses hoorondiin zai */
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
 }
 
 .navbar a {
-    color: white;
+    color: #d1d5db;
     text-decoration: none;
-    font-size: 16px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-    color: #f1c40f;
+    color: #60a5fa;
 }
 
-/* Main болон Sidebar zeregtsuulah yrunhii Grid */
+/* Layout - Grid */
 .container {
     display: grid;
-    grid-template-columns: 3fr 1fr; /* undsen hesg 3 haritsaatai, Sidebar нь 1 haritsaatai */
-    gap: 20px;
-    max-width: 1000px;
-    margin: 20px auto; /* gold bairluulah */
-    padding: 0 15px;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-/* undsen kontent lartuud (Grid shaardlaga 2) */
-.main-content h2 {
-    margin-bottom: 15px;
-    color: #2c3e50;
+/* Main Content */
+.section-title {
+    margin-bottom: 25px;
 }
 
+.section-title h2 {
+    color: #111827;
+}
+
+.section-title .line {
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #3b82f6;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+/* Cards Grid */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* kart heleriin 3  */
-    gap: 15px;                             /* kartiin zai*/
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
-/* kartiin zagvar */
+/* suuder bolon hudulguun */
 .card {
-    background-color: white;
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card h3 {
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ungtei hairtsag */
+.card-image {
+    height: 150px;
+    width: 100%;
+}
+.bg-1 { background: linear-gradient(45deg, #f87171, #fca5a5); }
+.bg-2 { background: linear-gradient(45deg, #34d399, #6ee7b7); }
+.bg-3 { background: linear-gradient(45deg, #fbbf24, #fcd34d); }
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    color: #1f2937;
     margin-bottom: 10px;
-    color: #2980b9;
 }
 
-/* hajuugiin tses (Sidebar) */
-.sidebar {
-    background-color: white;
-    padding: 15px;
+.card-content p {
+    color: #6b7280;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.read-more:hover {
+    color: #1e3a8a;
+}
+
+/* Sidebar */
+.widget {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+}
+
+.widget h3 {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 8px;
+}
+
+/* Хайлтын хэсэг */
+.search-box {
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #d1d5db;
     border-radius: 5px;
-    border: 1px solid #ddd;
+    outline: none;
 }
 
-.sidebar h3 {
-    margin-bottom: 10px;
-}
-
-/* Footer zagvar */
-footer {
-    background-color: #2c3e50;
+.search-box button {
+    padding: 8px 15px;
+    background-color: #3b82f6;
     color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebar-links {
+    list-style: none;
+}
+
+.sidebar-links li {
+    margin-bottom: 10px;
+}
+
+.sidebar-links a {
+    color: #4b5563;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.sidebar-links a:hover {
+    color: #3b82f6;
+    padding-left: 5px; /* Хулгана очиход бага зэрэг баруун тийш болох */
+}
+
+/* Footer */
+footer {
+    background-color: #1f2937;
+    color: #9ca3af;
     text-align: center;
-    padding: 15px 0;
-    margin-top: 30px;
+    padding: 25px 20px;
+    margin-top: 50px;
 }
