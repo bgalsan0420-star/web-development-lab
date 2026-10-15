@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаборатори 3: Бүртгэл</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-wrapper">
+        <!-- position: relative/absolute ашигласан Badge -->
+        <span class="badge">Шинэ</span>
+
+        <!-- 2-р шаардлага: Class сонгогч ашигласан гарчиг -->
+        <h2 class="form-title">Оюутны бүртгэл</h2>
+
+        <form>
+            <div class="input-group">
+                <label for="name" class="input-label">Нэр:</label>
+                <!-- model ашигласан талбар -->
+                <input type="text" id="name" class="input-field" placeholder="Нэрээ оруулна уу">
+            </div>
+
+            <div class="input-group">
+                <label for="email" class="input-label">Цахим шуудан:</label>
+                <input type="email" id="email" class="input-field" placeholder="Имэйл хаяг">
+            </div>
+
+            <!-- Tooltip ашиглах хэсэг -->
+            <div class="input-group tooltip-container">
+                <label for="password" class="input-label">Нууц үг:</label>
+                <input type="password" id="password" class="input-field" placeholder="Нууц үг">
+                <!--  position: relative/absolute ашигласан Tooltip -->
+                <span class="tooltip-text">Хамгийн багадаа 8 тэмдэгт</span>
+            </div>
+
+            <!-- Class сонгогч ашигласан товч -->
+            <button type="submit" class="submit-btn">Бүртгүүлэх</button>
+        </form>
+    </div>
+</body>
+</html>
