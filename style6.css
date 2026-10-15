@@ -1,0 +1,178 @@
+/* 4. Custom Properties (Design tokens) */
+:root {
+    --bg-color: #f4f7f6;
+    --text-color: #2c3e50;
+    --card-bg: #ffffff;
+    --primary-color: #3498db;
+    --transition-time: 0.6s;
+    --radius: 12px;
+}
+
+/* Dark Mode huvisagchuud */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --card-bg: #1e1e1e;
+    --primary-color: #4db8ff;
+}
+
+/* erunhii */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-time), color var(--transition-time);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+nav ul { list-style: none; display: flex; gap: 20px; align-items: center;}
+nav a { text-decoration: none; color: var(--text-color); font-weight: bold; }
+.theme-btn { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+
+.container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+.intro { text-align: center; margin-bottom: 40px; }
+
+/* 3. Loader Animation */
+.loader-container {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+.spinner {
+    width: 50px; height: 50px;
+    border: 5px solid #ccc;
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Grid Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* 2 & 3. 3D Flip Card & Stagger Animation */
+.gallery-item {
+    perspective: 1000px; /* 3D orchin uusgeh */
+    outline: none; /* Focus hureeg tseverleh */
+    opacity: 0; /* animation ehlehees omno nuuh */
+    transform: translateY(30px);
+}
+
+/* JS-ээс .loaded class nemegseh uyd Stagger ajillan */
+.loaded .gallery-item {
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: calc(var(--i) * 0.15s); /* --i ashiglan tsuvuulah*/
+}
+
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.flip-inner {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    transition: transform var(--transition-time);
+    transform-style: preserve-3d; /* 3D-g hadgaln */
+    border-radius: var(--radius);
+}
+
+/* 1. Hover and Focus-within effect */
+.gallery-item:hover .flip-inner,
+.gallery-item:focus-within .flip-inner {
+    transform: rotateY(180deg);
+}
+
+/* zurgiin  scale effect (Hover uyd zurag baga zereg tomroh ) */
+.gallery-item:hover .flip-front img,
+.gallery-item:focus-within .flip-front img {
+    transform: scale(1.1);
+}
+
+.flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* ar taliig nuuh */
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.flip-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-time);
+}
+
+.flip-back {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    transform: rotateY(180deg); /* ard tald erguulj bairluulah */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid var(--primary-color);
+}
+.flip-back h3 { color: var(--primary-color); margin-bottom: 10px; }
+
+/* Multimadea heseg */
+.multimedia-section { margin-top: 60px; }
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+.media-box {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+video, iframe { border-radius: calc(var(--radius) - 5px); }
+
+footer { text-align: center; padding: 20px; margin-top: 40px; color: var(--text-color); }
+
+/* 3. Prefers-reduced-motion (Hudulguun hyzgaarlah) */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    /* Hudulguun horigloson hund Hover hiihed shuud soligdon */
+}

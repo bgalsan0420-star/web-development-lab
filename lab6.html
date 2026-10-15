@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаб 6: Зургийн цомог</title>
+    <link rel="stylesheet" href="style6.css">
+</head>
+<body>
+    <!-- achaallah hesg (Loader) -->
+    <div id="loader" class="loader-container">
+        <div class="spinner"></div>
+    </div>
+
+    <header>
+        <div class="logo">
+            <!-- 5. Inline SVG logo oruulah -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+            MyGallery
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#">Нүүр</a></li>
+                <li><a href="#">Цомог</a></li>
+                <!-- 4. Dark Mode towch -->
+                <li><button id="theme-btn" class="theme-btn" aria-label="Өнгө солих">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h1>Байгалийн гэрэл зургууд</h1>
+            <p>Картууд дээр хулганаа аваачих эсвэл Tab товчоор шилжихэд 3D эргэж мэдээлэл харуулна.</p>
+        </section>
+
+        <!-- Gallery Grid hseg -->
+        <section id="gallery" class="gallery-grid">
+            
+            <!-- 1 & 2. 3D Flip Card (focus-within demjleg, stagger --i хувьсагчтай) -->
+            <div class="gallery-item" tabindex="0" style="--i: 1;">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <img src="img/photo2.jpg.jpg" alt="Байгалийн зураг">
+                    </div>
+                    <div class="flip-back">
+                        <h3>Хөвсгөл нуур</h3>
+                        <p>🗓️ Огноо: 2026.07.15</p>
+                        <p>📍 Газар: Хөвсгөл аймаг</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" tabindex="0" style="--i: 2;">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <img src="img/photo3.jpg.jpg" alt="Байгалийн зураг">
+                    </div>
+                    <div class="flip-back">
+                        <h3>Тэрэлж</h3>
+                        <p>🗓️ Огноо: 2026.08.10</p>
+                        <p>📍 Газар: Төв аймаг</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" tabindex="0" style="--i: 3;">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <img src="img/photo1.jpg.jpeg" alt="Байгалийн зураг">
+                    </div>
+                    <div class="flip-back">
+                        <h3>Говь</h3>
+                        <p>🗓️ Огноо: 2026.09.01</p>
+                        <p>📍 Газар: Өмнөговь</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Multimedia heseg (video, track, Iframe) -->
+        <section class="multimedia-section gallery-item" style="--i: 4;">
+            <h2>Мультимедиа & Газрын зураг</h2>
+            <div class="media-grid">
+                <!-- video bolon Captions (<track>) -->
+                <div class="media-box">
+                    <video controls width="100%">
+                        <!-- Uuriin video file iig end holbon -->
+                        <source src="video/clip.mp4" type="video/mp4">
+                        <track src="video/clip.mn.vtt" kind="subtitles" srclang="mn" label="Монгол хэл" default>
+                        Таны хөтөч видео дэмжихгүй байна.
+                    </video>
+                </div>
+                <!-- Iframe Gazriin zurg -->
+                <div class="media-box">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107052.88371380387!2d106.8324838!3d47.907711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5d96925eaac18fbb%3A0xc640c619b06f9d27!2z0KPQu9Cw0LDQvdCx0LDQsNGC0LDRgA!5e0!3m2!1smn!2smn!4v1690000000000" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 он. Лаб 6 Зургийн цомог портал.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
